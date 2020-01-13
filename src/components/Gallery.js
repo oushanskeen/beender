@@ -6,7 +6,7 @@ function Gallery() {
     <div className="App">
       <header className="App-header">
         <p>
-          You are in the gallery Gallery
+          You are in the Gallery
         </p>
       </header>
     </div>

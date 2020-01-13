@@ -11,5 +11,9 @@ context("The Home Page", ()=>{
       });
       it('contains link to a gallery', () => {
         cy.contains('Goto Gallery');
+      });
+      it('successfully loads gallery page', () => {
+        cy.contains('Goto Gallery').click();
+        cy.url().should('include', '/gallery');
       });    
 });
