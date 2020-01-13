@@ -5,5 +5,8 @@ context("The Home Page", ()=>{
 
       it('successfully loads', () => {
         cy.visit('http://localhost:3000');
-      });     
+      }); 
+      it('contains some welcome text', () => {
+        cy.contains('Some welcome text about where you are');
+      });    
 });
