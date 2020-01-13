@@ -8,5 +8,8 @@ context("The Home Page", ()=>{
       }); 
       it('contains some welcome text', () => {
         cy.contains('Some welcome text about where you are');
+      });
+      it('contains link to a gallery', () => {
+        cy.contains('Goto Gallery');
       });    
 });

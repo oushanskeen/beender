@@ -1,15 +1,17 @@
 import React from 'react';
 import './App.css';
+import { Route, Switch } from 'react-router-dom';
+import Home from './components/Home';
+import Gallery from './components/Gallery';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Some welcome text about where you are
-        </p>
-      </header>
-    </div>
+    <main>
+        <Switch>
+            <Route path="/" component={Home} exact />
+            <Route path="/gallery" component={Gallery}/>            
+        </Switch>
+    </main>
   );
 }
 
