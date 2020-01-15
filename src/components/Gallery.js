@@ -8,6 +8,14 @@ function Gallery() {
         <p>
           You are in the Gallery
         </p>
+            <div>
+                <button id='hateButton'>Hate</button>
+                <img id='beerPic' alt='beerPic'/>
+                <button id='loveButton'>Love</button>
+            </div>
+            <div id='beerPicLog'>
+                + - - - - - - 
+            </div>
       </header>
     </div>
   );
