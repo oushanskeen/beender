@@ -6,20 +6,9 @@ context("The Gallery Page",()=>{
         }
       });     
     });
-
+    
     it('successfully loads', () => { 
       cy.visit('http://localhost:3000/gallery');
-    });
-    it('contains some text', () => {
-      cy.contains('You are in the Gallery');
-    });
-    it('contains counter with block with two button and image in between', () => {      
-      //cy.get('#eval').contains(1);
-      cy.get('#hateButton').contains('Hate');
-      cy.get('#beerPic[alt="beerPic"]')//.contains('alt', 'beerPic');
-      cy.get('#loveButton').contains('Love');
-      cy.get('#beerPicLog').contains('+ - - - - - -');
-      //cy.log('#counter'.outerHTML);
     });
     
     it('has expected state on load', () => 
@@ -28,15 +17,36 @@ context("The Gallery Page",()=>{
              .invoke('getState')
              .should('deep.equal', 
                 {gallery:[
-                    {id:"1",status:'unknown'},
-                    {id:"2",status:'unknown'},
-                    {id:"3",status:'unknown'},
-                    {id:"4",status:'unknown'},
-                    {id:"5",status:'unknown'},
-                    {id:"6",status:'unknown'},
-                    {id:"7",status:'unknown'}
+                  {id:"1",status:'unknown'},
+                  {id:"2",status:'unknown'},
+                  {id:"3",status:'unknown'},
+                  {id:"4",status:'unknown'},
+                  {id:"5",status:'unknown'},
+                  {id:"6",status:'unknown'},
+                  {id:"7",status:'unknown'}
                 ]}
              )
     });
-    
+    it('contains some welcome text', () => {
+      cy.contains('You are in the Gallery');
+    });
+    it('contains block of two buttons, image in between and counter below', () => {      
+      cy.get('#hateButton').contains('Hate');
+      cy.get('#beerPic').contains('1 : unknown');
+      cy.get('#loveButton').contains('Love');
+      cy.get('#beerPicLog').contains('+ - - - - - -');
+    });
+    it('Hate button emits "Hate" action', () => {
+      cy.get('#hateButton').click();
+      cy.get('@consoleLog').should('be.calledWith',{type: "HATE", id: "1"})
+    });
+    it('Love button emits "Love" action', () => {
+      cy.get('#loveButton').click();
+      cy.get('@consoleLog').should('be.calledWith',{type: "LOVE", id: "1"})
+    });
+    it('when you rich the end of the gallery, you see the FINISH', () => {      
+      let array = [1,2,3,4,5,6,7];
+      array.map(e => cy.get('#hateButton').click());
+      cy.get('#gallery').contains('FINISH');
+    });
 });

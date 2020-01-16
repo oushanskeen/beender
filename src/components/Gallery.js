@@ -1,24 +1,60 @@
-import React from 'react';
+import React, {useState} from 'react';
 import '../App.css';
+import * as actions from '../actions';
+import { connect } from "react-redux";
 
-function Gallery() {
+let Gallery = ({ onHate, beerPic, onLove }) => {
+   let idScope = beerPic.map((e,i) => i);
+   const [count,setCount] = useState(idScope[0]);
+   let handleLove = _picId => {
+        setCount(count+1);
+        onLove(_picId)
+    };
+    let handleHate = _picId => {
+        setCount(count+1);
+        onHate(_picId)
+    };
+
   return (
     <div className="App">
       <header className="App-header">
         <p>
           You are in the Gallery
         </p>
-            <div>
-                <button id='hateButton'>Hate</button>
-                <img id='beerPic' alt='beerPic'/>
-                <button id='loveButton'>Love</button>
-            </div>
-            <div id='beerPicLog'>
-                + - - - - - - 
-            </div>
+        <div id='gallery'>
+            { count >= 7  
+                ? (
+                    <div onLoad={console.log(beerPic)}>FINISH</div>
+                  ) 
+                : (
+                    <div>
+                        <button id="hateButton"
+                            onClick={()=>handleHate(beerPic[count].id)}            
+                        > Hate </button>
+                        <span id='beerPic'> {beerPic[count].id} : {beerPic[count].status} </span>
+                        <button id="loveButton" 
+                            onClick={()=>handleLove(beerPic[count].id)}
+                        > Love </button>
+                        <div id='beerPicLog'>{idScope.map(e =>  e===count ? '+ ' : '- ')}</div>
+                    </div>
+                  )
+            }       
+        </div>
       </header>
     </div>
   );
-}
+};
 
-export default Gallery;
+const mapStateToProps = state => ({
+  beerPic: state.gallery
+});
+
+const mapDispatchToProps = (dispatch, id) => ({
+  onLove: id => dispatch(actions.love(id)),
+  onHate: id => dispatch(actions.hate(id)),
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Gallery);
