@@ -11,7 +11,7 @@
 /cypress/videos
 
 # production
-/build
+#/build
 
 # misc
 .idea
