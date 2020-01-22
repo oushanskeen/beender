@@ -44,9 +44,15 @@ context("The Gallery Page",()=>{
       cy.get('#loveButton').click();
       cy.get('@consoleLog').should('be.calledWith',{type: "LOVE", id: "1"})
     });
-    it('when you rich the end of the gallery, you see the FINISH', () => {      
-      let array = [1,2,3,4,5,6,7];
-      array.map(e => cy.get('#hateButton').click());
-      cy.get('#gallery').contains('FINISH');
-    });
+    it('can do a bit at the end',()=>{
+        let array = [1,2,3,4,5,6,7];
+          array.map(e => cy.get('#loveButton').click());
+        it('when you rich the end of the gallery, you see the "Goto Choice"', () => {      
+          cy.get('#gallery').contains('Goto Choice');
+        });
+        it('when you click "Goto Choice" you go to choice page', () => {      
+          cy.get('#gallery').contains('Goto Choice').click(); 
+          cy.url().should('include', '/choice');
+        });
+    });    
 });
