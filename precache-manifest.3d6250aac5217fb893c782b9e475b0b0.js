@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "508cb3b1808d4ee0a839817685c25daa",
+    "revision": "ba6d019508a07620f2c39769e3099a00",
     "url": "/beender/index.html"
   },
   {
-    "revision": "a06c23b64d70d7bdac4d",
+    "revision": "bf9f7ebf4c4e538243d2",
     "url": "/beender/static/css/main.d1b05096.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/beender/static/js/2.57af05be.chunk.js.LICENSE"
   },
   {
-    "revision": "a06c23b64d70d7bdac4d",
-    "url": "/beender/static/js/main.5f566458.chunk.js"
+    "revision": "bf9f7ebf4c4e538243d2",
+    "url": "/beender/static/js/main.92b67cd5.chunk.js"
   },
   {
     "revision": "2c1d29990622cc51a285",
