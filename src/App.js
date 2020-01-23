@@ -7,13 +7,11 @@ import Choice from './components/Choice';
 
 function App() {
   return (
-    <main>
-        <Switch>
-            <Route path="/" component={Home}/>
-            <Route path="/gallery" component={Gallery}/>
-            <Route path="/choice" component={Choice}/>            
-        </Switch>
-    </main>
+    <Switch>
+        <Route path="/beender/" component={Home} exact/>
+        <Route path="/beender/gallery" component={Gallery} exact/>
+        <Route path="/beender/choice" component={Choice} exact/>            
+    </Switch>
   );
 }
 

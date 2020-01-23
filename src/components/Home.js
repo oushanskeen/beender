@@ -9,7 +9,7 @@ function Home() {
         <p>
           Some welcome text about where you are
         </p>
-        <Link to="/gallery" className="App-link">Goto Gallery</Link>
+        <Link to="/beender/gallery" className="App-link">Goto Gallery</Link>
       </header>
     </div>
   );
