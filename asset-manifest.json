@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/beender/static/css/main.d1b05096.chunk.css",
-    "main.js": "/beender/static/js/main.3d85ad8b.chunk.js",
-    "main.js.map": "/beender/static/js/main.3d85ad8b.chunk.js.map",
+    "main.js": "/beender/static/js/main.a86d10f7.chunk.js",
+    "main.js.map": "/beender/static/js/main.a86d10f7.chunk.js.map",
     "runtime-main.js": "/beender/static/js/runtime-main.43ab1129.js",
     "runtime-main.js.map": "/beender/static/js/runtime-main.43ab1129.js.map",
     "static/js/2.57af05be.chunk.js": "/beender/static/js/2.57af05be.chunk.js",
     "static/js/2.57af05be.chunk.js.map": "/beender/static/js/2.57af05be.chunk.js.map",
     "index.html": "/beender/index.html",
-    "precache-manifest.447b4a8c84b0c2cd70695e721ca6dc3b.js": "/beender/precache-manifest.447b4a8c84b0c2cd70695e721ca6dc3b.js",
+    "precache-manifest.663df87201f96e9febefdba351a6e841.js": "/beender/precache-manifest.663df87201f96e9febefdba351a6e841.js",
     "service-worker.js": "/beender/service-worker.js",
     "static/css/main.d1b05096.chunk.css.map": "/beender/static/css/main.d1b05096.chunk.css.map",
     "static/js/2.57af05be.chunk.js.LICENSE": "/beender/static/js/2.57af05be.chunk.js.LICENSE"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.43ab1129.js",
     "static/js/2.57af05be.chunk.js",
     "static/css/main.d1b05096.chunk.css",
-    "static/js/main.3d85ad8b.chunk.js"
+    "static/js/main.a86d10f7.chunk.js"
   ]
 }
