@@ -11,9 +11,9 @@ const store = createStore(reducer);
 
 ReactDOM.render(
     <Provider store={store}>
-        <BrowserRouter>
-            <App />
-        </BrowserRouter>   
+            <BrowserRouter>
+                <App />
+            </BrowserRouter>   
     </Provider>,
     document.getElementById('root')
 );
@@ -21,4 +21,5 @@ ReactDOM.render(
 if (window.Cypress) {
     window.store = store;
 };
+
 
