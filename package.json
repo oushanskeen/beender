@@ -1,4 +1,5 @@
 {
+  "homepage": "http://oushanskeen.github.io/beender",
   "name": "beender",
   "version": "0.1.0",
   "private": true,
@@ -18,7 +19,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "cytest": "cypress open"
+    "cytest": "cypress open",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -36,6 +39,7 @@
     ]
   },
   "devDependencies": {
-    "cypress": "^3.8.2"
+    "cypress": "^3.8.2",
+    "gh-pages": "^2.2.0"
   }
 }

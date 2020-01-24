@@ -26,7 +26,7 @@ let Gallery = ({ onHate, beerPic, onLove }) => {
             { count >= 7  
                 ? (
                     <div onLoad={console.log(beerPic)}>
-                        <Link to="/choice">Goto Choice</Link>
+                        <Link to="/beender/choice">Goto Choice</Link>
                     </div>
                   ) 
                 : (
