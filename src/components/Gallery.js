@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import '../App.css';
 import * as actions from '../actions';
 import { connect } from "react-redux";
+import { Link } from 'react-router-dom';
 
 let Gallery = ({ onHate, beerPic, onLove }) => {
    let idScope = beerPic.map((e,i) => i);
@@ -24,7 +25,9 @@ let Gallery = ({ onHate, beerPic, onLove }) => {
         <div id='gallery'>
             { count >= 7  
                 ? (
-                    <div onLoad={console.log(beerPic)}>FINISH</div>
+                    <div onLoad={console.log(beerPic)}>
+                        <Link to="/choice">Goto Choice</Link>
+                    </div>
                   ) 
                 : (
                     <div>
