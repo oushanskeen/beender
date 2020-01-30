@@ -1,6 +1,6 @@
 context("The Choice Page", ()=>{
     beforeEach(()=> {
-      cy.visit('http://localhost:3000/choice', {
+      cy.visit('http://localhost:3000/beender/choice', {
         onBeforeLoad (win) {
           cy.spy(win.console, 'log').as('consoleLog')
         }
@@ -8,14 +8,14 @@ context("The Choice Page", ()=>{
     });
 
       it('successfully loads', () => {
-        cy.visit('http://localhost:3000/choice');
+        cy.visit('http://localhost:3000/beender/choice');
       }); 
       it('contains some welcome text', () => {
         cy.contains('You are in a world of chosen cards');
       });
       
       it('displays only loved cards clickable id\'s', () => { 
-        cy.visit('http://localhost:3000/gallery');
+        cy.visit('http://localhost:3000/beender/gallery');
        let love = [1,2,3];
        let hate = [1,2,3,4];
        love.map(e => cy.get('#loveButton').click());
