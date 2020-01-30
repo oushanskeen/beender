@@ -9,7 +9,25 @@ context("The Choice Page", ()=>{
 
       it('successfully loads', () => {
         cy.visit('http://localhost:3000/beender/choice');
-      }); 
+      });
+        
+      it('has expected state on load', () => 
+         { cy.window()
+             .its('store')
+             .invoke('getState')
+             .should('deep.equal', 
+                {gallery:[
+                  {id:"1",status:'unknown'},
+                  {id:"2",status:'unknown'},
+                  {id:"3",status:'unknown'},
+                  {id:"4",status:'unknown'},
+                  {id:"5",status:'unknown'},
+                  {id:"6",status:'unknown'},
+                  {id:"7",status:'unknown'}
+                ]}
+             )
+      });
+ 
       it('contains some welcome text', () => {
         cy.contains('You are in a world of chosen cards');
       });
