@@ -34,14 +34,10 @@ context("The Choice Page", ()=>{
       
       it('displays only loved cards clickable id\'s', () => { 
         cy.visit('http://localhost:3000/beender/gallery');
-       let love = [1,2,3];
-       let hate = [1,2,3,4];
+       let love = [1,2,3,4,5,6,7];
        love.map(e => cy.get('#loveButton').click());
-       hate.map(e => cy.get('#hateButton').click());
            cy.get('#gallery').contains('Goto Choice').click();
-           cy.url().should('include', '/choice');
-           love.map(e => cy.get('#choice').contains(e));
-           cy.get('#choice').contains('1').click();      
+           cy.url().should('include', '/choice');  
       }); 
 });
          

@@ -1,35 +1,41 @@
-import React, {useState} from 'react';
+import React from 'react';
 import '../App.css';
 import { connect } from "react-redux";
+import * as actions from '../actions';
+import { Link } from 'react-router-dom';
 
-let Choice = ({choice}) => {
-  let [beerId,setBeerId] = useState('');
-  let LoveItem = ({num}) => {
-      let handleItemClick = () => {
-           setBeerId(beerId = num);
-           console.log('beerId :', beerId);
-      };
-      return <span onClick={handleItemClick}>#{num}<br/></span>;
-  };
+let Choice = ({isLoved, isSelected, onSelect}) => {
   return (
     <div className="App">
-      <header className="App-header">
+      <header className="App-header"
+           onLoad={console.log(isSelected)}
+      >
         <p>You love: </p>
         <div id='choice'>
-            {choice.map(e => <LoveItem num={e.id}/>)}
+            {
+                isLoved.map(e => 
+                    <Link to={`/beender/choice/:${e.id}`} 
+                        onClick={()=>onSelect(e.id)}><p>{e.id}</p>
+                    </Link>)
+            }
         </div>
-        <p>
-          You are in a world of chosen cards
-        </p>
+        <p> You are in a world of chosen cards </p>
       </header>
     </div>
   );
 };
 
 const mapStateToProps = state => ({
-  choice: state.gallery.filter(e => e.status==='Love')
+  isLoved: state.gallery.filter(e => e.status==='Love'),
+  isSelected: state.choice,
+  //storage: state
+});
+
+const mapDispatchToProps = (dispatch, id) => ({
+  onSelect: id => dispatch(actions.select(id))
 });
 
 export default connect(
-  mapStateToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(Choice);
