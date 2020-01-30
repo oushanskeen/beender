@@ -4,14 +4,20 @@ import { Route, Switch } from 'react-router-dom';
 import Home from './components/Home';
 import Gallery from './components/Gallery';
 import Choice from './components/Choice';
+import Selection from './components/Selection';
 
 function App() {
   return (
     <main>
         <Switch>
-            <Route exact path="/beender/" component={Home} />
-            <Route exact path="/beender/gallery" component={Gallery}/>
-            <Route exact path="/beender/choice" component={Choice}/>            
+            <Route exact path="/beender/" 
+                component={Home} />
+            <Route exact path="/beender/gallery"
+                component={Gallery}/>
+            <Route exact path="/beender/choice"
+                 component={Choice}/>
+            <Route exact path="/beender/choice/:id"
+                 component={Selection}/>            
         </Switch>
     </main>
   );
