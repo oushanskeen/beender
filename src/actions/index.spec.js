@@ -16,3 +16,12 @@ describe('gallery actions', () => {
     });
   });
 });
+
+describe('choice actions', () => {
+  it('Select should create SELECT action', () => {
+    expect(actions.select(1)).toEqual({
+      type: types.SELECT,
+      id: 1
+    });
+  });
+});

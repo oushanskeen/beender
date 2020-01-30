@@ -8,4 +8,8 @@ export const hate = id => {
     console.log({ type: types.HATE, id })
     return { type: types.HATE, id };
 };
+export const select = id => {
+    console.log({ type: types.SELECT, id })
+    return { type: types.SELECT, id };
+};
 
