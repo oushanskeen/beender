@@ -25,3 +25,17 @@ describe('choice actions', () => {
     });
   });
 });
+
+describe('selection actions', () => {
+    it('Selected component should create DESELECT action for "No" button',()=>{
+        expect(actions.deselect()).toEqual({
+            type: types.DESELECT,
+        })
+    });
+    it('Selected component should create OUTCOME action for "Yes" button',()=>{
+        expect(actions.outcome(1)).toEqual({
+            type: types.OUTCOME,
+            id:1
+        })
+    });
+});

@@ -12,4 +12,12 @@ export const select = id => {
     console.log({ type: types.SELECT, id })
     return { type: types.SELECT, id };
 };
+export const deselect = () => {
+    console.log({ type: types.DESELECT})
+    return { type: types.DESELECT};
+};
+export const outcome = id => {
+    console.log({ type: types.OUTCOME, id})
+    return { type: types.OUTCOME, id};
+};
 
