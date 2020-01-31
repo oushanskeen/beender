@@ -1,4 +1,7 @@
 context("The Selected Page", ()=>{
+      beforeEach(() => {
+        cy.visit('http://localhost:3000/beender/choice/:1');
+      });
       it('successfully loads', () => {
         cy.visit('http://localhost:3000/beender/choice/:1');
       });
@@ -20,5 +23,8 @@ context("The Selected Page", ()=>{
                   {id:"7",status:'unknown'}
                 ]}
              )
-      });      
+      });
+      it('contains params from request', () => {
+        cy.get('#selectedCard').contains('1');
+      });     
 });
