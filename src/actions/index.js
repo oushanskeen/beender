@@ -20,4 +20,7 @@ export const outcome = id => {
     console.log({ type: types.OUTCOME, id})
     return { type: types.OUTCOME, id};
 };
-
+export const home = () => {
+    console.log({ type: types.HOME});
+    return { type: types.HOME };
+};

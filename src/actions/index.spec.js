@@ -39,3 +39,11 @@ describe('selection actions', () => {
         })
     });
 });
+
+describe('order actions', () => {
+  it('Home should create HOME action', () => {
+    expect(actions.home()).toEqual({
+      type: types.HOME
+    });
+  });
+});
