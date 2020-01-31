@@ -16,15 +16,19 @@ context("The Choice Page", ()=>{
              .its('store')
              .invoke('getState')
              .should('deep.equal', 
-                {gallery:[
-                  {id:"1",status:'unknown'},
-                  {id:"2",status:'unknown'},
-                  {id:"3",status:'unknown'},
-                  {id:"4",status:'unknown'},
-                  {id:"5",status:'unknown'},
-                  {id:"6",status:'unknown'},
-                  {id:"7",status:'unknown'}
-                ]}
+                {
+                    gallery:[
+                        {id:"1",status:'unknown'},
+                        {id:"2",status:'unknown'},
+                        {id:"3",status:'unknown'},
+                        {id:"4",status:'unknown'},
+                        {id:"5",status:'unknown'},
+                        {id:"6",status:'unknown'},
+                        {id:"7",status:'unknown'}
+                    ],
+                    choice:{isSelected:" "},
+                    selection:{outcome:" "}   
+                }
              )
       });
  
