@@ -27,5 +27,11 @@ context("The Order Page", ()=>{
                     selection:{outcome:" "}   
                 }
              )
-      });   
+      });
+      it('contains paragraph with the face beer card', () => {
+        cy.get("#beerOrder").contains('Your order:');
+      });
+      it('contains button to come back home', () => {
+        cy.get('#homeButton').contains('HOME');
+      });    
 });
