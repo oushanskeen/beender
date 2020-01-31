@@ -26,5 +26,9 @@ context("The Selected Page", ()=>{
       });
       it('contains params from request', () => {
         cy.get('#selectedCard').contains('1');
+      });
+      it('contains two buttons for accept and deny', () => {
+        cy.get('#noButton').contains('NO');
+        cy.get('#yesButton').contains('YES');
       });     
 });
