@@ -5,6 +5,7 @@ import Home from './components/Home';
 import Gallery from './components/Gallery';
 import Choice from './components/Choice';
 import Selection from './components/Selection';
+import Order from './components/Order';
 
 function App() {
   return (
@@ -17,7 +18,9 @@ function App() {
             <Route exact path="/beender/choice"
                  component={Choice}/>
             <Route exact path="/beender/choice/:id"
-                 component={Selection}/>            
+                 component={Selection}/>
+            <Route exact path="/beender/order"
+                 component={Order}/>             
         </Switch>
     </main>
   );
