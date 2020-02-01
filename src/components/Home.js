@@ -2,14 +2,19 @@ import React from 'react';
 import '../App.css';
 import { Link } from 'react-router-dom';
 
-function Home() {
+let Home = () => {
   return (
     <div className="App">
       <header className="App-header">
         <p>
           Some welcome text about where you are
         </p>
-        <Link to="/beender/gallery" className="App-link">Goto Gallery</Link>
+        <Link 
+            to="/beender/gallery" 
+            className="App-link"
+        >
+            Goto Gallery
+        </Link>
       </header>
     </div>
   );

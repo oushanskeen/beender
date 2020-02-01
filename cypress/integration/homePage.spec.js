@@ -1,10 +1,10 @@
 context("The Home Page", ()=>{
     beforeEach(()=> {
-      cy.visit('http://localhost:3000');
+      cy.visit('http://localhost:3000/beender');
     });
 
       it('successfully loads', () => {
-        cy.visit('http://localhost:3000');
+        cy.visit('http://localhost:3000/beender');
       }); 
       it('contains some welcome text', () => {
         cy.contains('Some welcome text about where you are');

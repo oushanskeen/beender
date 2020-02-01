@@ -15,7 +15,6 @@ let Gallery = ({ onHate, beerPic, onLove }) => {
         setCount(count+1);
         onHate(_picId)
     };
-
   return (
     <div className="App">
       <header className="App-header">
@@ -26,13 +25,18 @@ let Gallery = ({ onHate, beerPic, onLove }) => {
             { count >= 7  
                 ? (
                     <div onLoad={console.log(beerPic)}>
-                        <Link to="/beender/choice">Goto Choice</Link>
+                        <Link 
+                            to="/beender/choice"
+                        >
+                            Goto Choice
+                        </Link>
                     </div>
                   ) 
                 : (
                     <div>
-                        <button id="hateButton"
-                            onClick={()=>handleHate(beerPic[count].id)}            
+                        <button 
+                            id="hateButton" 
+          onClick={()=>handleHate(beerPic[count].id)}            
                         > Hate </button>
                         <span id='beerPic'> {beerPic[count].id} : {beerPic[count].status} </span>
                         <button id="loveButton" 

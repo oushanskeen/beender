@@ -29,9 +29,10 @@ context("The Order Page", ()=>{
              )
       });
       it('contains paragraph with the face beer card', () => {
-        cy.get("#beerOrder").contains('Your order:');
+        cy.get("#beerOrder").contains('Pardon, you chose nothing');
       });
       it('contains button to come back home', () => {
-        cy.get('#homeButton').contains('HOME');
+        cy.get('#homeButton').contains('HOME').click();
+        cy.url().should('include', '/beender');
       });    
 });

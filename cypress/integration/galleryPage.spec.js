@@ -1,6 +1,6 @@
 context("The Gallery Page",()=>{
     beforeEach(()=> {
-      cy.visit('http://localhost:3000/gallery', {
+      cy.visit('http://localhost:3000/beender/gallery', {
         onBeforeLoad (win) {
           cy.spy(win.console, 'log').as('consoleLog')
         }
@@ -8,7 +8,7 @@ context("The Gallery Page",()=>{
     });
     
     it('successfully loads', () => { 
-      cy.visit('http://localhost:3000/gallery');
+      cy.visit('http://localhost:3000/beender/gallery');
     });
     
     it('has expected state on load', () => 
@@ -16,17 +16,22 @@ context("The Gallery Page",()=>{
              .its('store')
              .invoke('getState')
              .should('deep.equal', 
-                {gallery:[
-                  {id:"1",status:'unknown'},
-                  {id:"2",status:'unknown'},
-                  {id:"3",status:'unknown'},
-                  {id:"4",status:'unknown'},
-                  {id:"5",status:'unknown'},
-                  {id:"6",status:'unknown'},
-                  {id:"7",status:'unknown'}
-                ]}
+                    {
+                        gallery:[
+                            {id:"1",status:'unknown'},
+                            {id:"2",status:'unknown'},
+                            {id:"3",status:'unknown'},
+                            {id:"4",status:'unknown'},
+                            {id:"5",status:'unknown'},
+                            {id:"6",status:'unknown'},
+                            {id:"7",status:'unknown'}
+                        ],
+                        choice:{isSelected: " "},
+                        selection:{outcome:" "}
+                    }
+                
              )
-    });
+      });
     it('contains some welcome text', () => {
       cy.contains('You are in the Gallery');
     });

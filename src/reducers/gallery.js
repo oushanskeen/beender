@@ -3,7 +3,8 @@ import {
   HATE
 } from '../constants/ActionTypes'
 
-const initialState = (window.Cypress && window.initialState) || [
+const initialState = (window.Cypress && window.initialState) || 
+[
   {id:"1",status:'unknown'},
   {id:"2",status:'unknown'},
   {id:"3",status:'unknown'},

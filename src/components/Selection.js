@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import * as actions from '../actions';
 import { Link, useParams } from 'react-router-dom';
 
-let Selection = ({selection, info, onNo, onYes}) => {
+let Selection = ({ selection, info, onNo, onYes}) => {
   let {id} = useParams();
   let Id = id[1];
   let essence = info.filter(e => e.id === Id);

@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import * as actions from '../actions';
 import { Link } from 'react-router-dom';
 
-let Choice = ({isLoved, isSelected, onSelect}) => {
+let Choice = ({ isLoved, isSelected, onSelect}) => {
   return (
     <div className="App">
       <header className="App-header"
@@ -27,8 +27,7 @@ let Choice = ({isLoved, isSelected, onSelect}) => {
 
 const mapStateToProps = state => ({
   isLoved: state.gallery.filter(e => e.status==='Love'),
-  isSelected: state.choice,
-  //storage: state
+  isSelected: state.choice
 });
 
 const mapDispatchToProps = (dispatch, id) => ({
