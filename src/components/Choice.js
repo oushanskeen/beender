@@ -5,6 +5,9 @@ import * as actions from '../actions';
 import { Link } from 'react-router-dom';
 
 let Choice = ({ isLoved, isSelected, onSelect}) => {
+  console.log('me choice');
+  console.log('isLoved: ', isLoved);
+  console.log('isSelected: ', isSelected);
   return (
     <div className="App">
       <header className="App-header"

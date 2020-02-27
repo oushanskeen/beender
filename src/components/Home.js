@@ -3,26 +3,26 @@ import '../App.css';
 import { Link } from 'react-router-dom';
 //import axios from 'axios';
 import { connect } from "react-redux";
-
+import * as actions from '../actions';
 
 let Home = ({hello,store}) => {
-    
-  return (
-    <div className="App" onLoad={console.log('state : ', store)}>
-      <header className="App-header" onLoad={console.log('hello in Home component: ', hello)}>
-        <p>
-          Some welcome text about where you are
-        </p>
-        <Link 
-            to="/beender/gallery" 
-            className="App-link"
-        >
-            Goto Gallery
-        </Link>
-      </header>
-    </div>
-  );
-};
+      return (
+        <div className="App">
+          <header className="App-header">
+            <p>
+              {console.log('home store is', store)}
+              Some welcome text about where you are
+            </p>
+            <Link 
+                to="/beender/gallery" 
+                className="App-link"
+            >
+                Goto Gallery
+            </Link>
+          </header>
+        </div>
+      );
+   };
 
 
 const mapStateToProps = state => ({
@@ -32,14 +32,17 @@ const mapStateToProps = state => ({
   store: state
 });
 
-//const mapDispatchToProps = (dispatch, id) => ({
-//  onLove: id => dispatch(actions.love(id)),
-//  onHate: id => dispatch(actions.hate(id)),
+//const mapDispatchToProps = dispatch => ({
+//    onHello: (() => dispatch(thunkedFetchHello()))()
 //});
+const mapDispatchToProps = dispatch => ({
+    // calling request forces response return
+    onHello: dispatch(actions.fetchHelloRequest())
+});
 
 export default connect(
   mapStateToProps,
-  //mapDispatchToProps
+  mapDispatchToProps
 )(Home);
 
 

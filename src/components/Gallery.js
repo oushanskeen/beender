@@ -15,6 +15,7 @@ let Gallery = ({ onHate, beerPic, onLove }) => {
         setCount(count+1);
         onHate(_picId)
     };
+  //console.log('beerPic.length: ', beerPic.length);
   return (
     <div className="App">
       <header className="App-header">
@@ -22,7 +23,7 @@ let Gallery = ({ onHate, beerPic, onLove }) => {
           You are in the Gallery
         </p>
         <div id='gallery'>
-            { count >= 7  
+            { count >= beerPic.length  
                 ? (
                     <div onLoad={console.log(beerPic)}>
                         <Link 
@@ -59,6 +60,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = (dispatch, id) => ({
   onLove: id => dispatch(actions.love(id)),
   onHate: id => dispatch(actions.hate(id)),
+  onFetchGallery: (() => dispatch(actions.fetchGallery()))()
 });
 
 export default connect(

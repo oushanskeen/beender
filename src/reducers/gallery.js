@@ -1,6 +1,7 @@
 import {
   LOVE,
-  HATE
+  HATE,
+  FETCH_GALLERY_RESPONSE
 } from '../constants/ActionTypes'
 
 const initialState = (window.Cypress && window.initialState) || 
@@ -27,7 +28,9 @@ export default function gallery(state = initialState, action) {
         (gallery.id === action.id 
             ? { ...gallery, status:"Hate"} 
             : gallery)
-        );   
+        );
+    case FETCH_GALLERY_RESPONSE:
+        return state = action.body
     default:
       return state
   }

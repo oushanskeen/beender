@@ -17,7 +17,7 @@ function App() {
                 component={Gallery}/>
             <Route exact path="/beender/choice"
                  component={Choice}/>
-            <Route exact path="/beender/choice/:id"
+            <Route exact path="/beender/choice/:beerId"
                  component={Selection}/>
             <Route exact path="/beender/order"
                  component={Order}/>             
