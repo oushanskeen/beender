@@ -15,7 +15,7 @@ let Gallery = ({ onHate, beerPic, onLove }) => {
         setCount(count+1);
         onHate(_picId)
     };
-  //console.log('beerPic.length: ', beerPic.length);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -25,7 +25,7 @@ let Gallery = ({ onHate, beerPic, onLove }) => {
         <div id='gallery'>
             { count >= beerPic.length  
                 ? (
-                    <div onLoad={console.log(beerPic)}>
+                    <div>
                         <Link 
                             to="/beender/choice"
                         >

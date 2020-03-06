@@ -15,7 +15,6 @@ let Order = ({ gallery, outcome={isSelected:""}, onHome}) => {
                 ? <p>Pardon, you chose nothing</p>
                 : <p>
                     Your order:
-                    {console.log(order[0])}
                     {order[0].id}
                   </p>
             }

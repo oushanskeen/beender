@@ -16,7 +16,8 @@ context("The Gallery Page",()=>{
              .its('store')
              .invoke('getState')
              .should('deep.equal', 
-                    {
+                    {  
+                        home:{message:"simple hello"},
                         gallery:[
                             {id:"1",status:'unknown'},
                             {id:"2",status:'unknown'},

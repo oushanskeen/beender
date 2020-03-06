@@ -14,6 +14,7 @@ context("The Selected Page", ()=>{
              .invoke('getState')
              .should('deep.equal', 
                     {
+                        home:{message:"simple hello"},
                         gallery:[
                             {id:"1",status:'unknown'},
                             {id:"2",status:'unknown'},

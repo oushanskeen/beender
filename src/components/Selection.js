@@ -4,27 +4,10 @@ import { connect } from "react-redux";
 import * as actions from '../actions';
 import { Link, useParams } from 'react-router-dom';
 
-let Selection = ({ selection, info, onNo, onYes}) => {
-  console.log('me selection');
-  console.log('info: ', info);
-  console.log('selection: ', selection);
+let Selection = ({ selection, info=[{id:"1",status:'unknown'}], onNo, onYes}) => {
   let {beerId} = useParams();
-  console.log('id: ', beerId);
-  let Id = +beerId[1];
-  console.log('Id: ', +Id);
-  //console.log(typeof +Id);
-  let essVis = info.map(e => e.id);
-  console.log('essVis: ', essVis);
-  //let essFilt = info.filter(e => e.id===`${Id}`);
-  let essFilt = info.filter(e => e.id===Id);
-  console.log('essFilt:', essFilt);
-  let essence = info.filter(e => e.id === Id);
-  console.log('essence: ', essence);
-  //let essence = info.filter(e => e.id === selection.isSelected);
-  //console.log('id: ', id);
-  
-  
-  
+  let essence = info.filter(e => e.id === beerId[1]);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -39,9 +22,8 @@ let Selection = ({ selection, info, onNo, onYes}) => {
                 NO 
             </Link>
             <span> </span>
-            {console.log('Id : ', Id)}
             <Link to='/beender/order' id='yesButton' 
-                onClick={()=>onYes(Id)}
+                onClick={()=>onYes(beerId[1])}
             > 
                 YES  
             </Link> 
