@@ -17,7 +17,7 @@ let Home = ({hello,store}) => {
                     to="/beender/gallery" 
                     class="HomeGoToGalleryButton cell"
                 >
-                    Go To Gallery <pre> >>> </pre>
+                    Go To Gallery
                 </Link>
             </div>
         </div>
