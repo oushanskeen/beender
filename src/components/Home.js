@@ -1,23 +1,25 @@
 import React from 'react';
-import '../App.css';
+import '../css/Home.css';
 import { Link } from 'react-router-dom';
 import { connect } from "react-redux";
 import * as actions from '../actions';
 
 let Home = ({hello,store}) => {
       return (
-        <div className="App">
-          <header className="App-header">
+        <div class="HomeBox">
+          <div class="HomeWelcomeText cell">
             <p>
                 Some welcome text about where you are
             </p>
-            <Link 
-                to="/beender/gallery" 
-                className="App-link"
-            >
-                Goto Gallery
-            </Link>
-          </header>
+          </div>
+          <div class="HomeGoToGalleryBox">
+                <Link 
+                    to="/beender/gallery" 
+                    class="HomeGoToGalleryButton cell"
+                >
+                    Go To Gallery <pre> >>> </pre>
+                </Link>
+            </div>
         </div>
       );
    };

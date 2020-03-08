@@ -4,16 +4,19 @@ import {
   FETCH_GALLERY_RESPONSE
 } from '../constants/ActionTypes'
 
+const sampleGalleryState = 
+    [
+      {id:"1",status:'unknown'},
+      {id:"2",status:'unknown'},
+      {id:"3",status:'unknown'},
+      {id:"4",status:'unknown'},
+      {id:"5",status:'unknown'},
+      {id:"6",status:'unknown'},
+      {id:"7",status:'unknown'},
+    ];
+
 const initialState = (window.Cypress && window.initialState) || 
-[
-  {id:"1",status:'unknown'},
-  {id:"2",status:'unknown'},
-  {id:"3",status:'unknown'},
-  {id:"4",status:'unknown'},
-  {id:"5",status:'unknown'},
-  {id:"6",status:'unknown'},
-  {id:"7",status:'unknown'},
-];
+sampleGalleryState;
 
 export default function gallery(state = initialState, action) {
   switch (action.type) {
