@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import '../App.css';
+import '../css/Gallery.css';
 import * as actions from '../actions';
 import { connect } from "react-redux";
 import { Link } from 'react-router-dom';
@@ -15,41 +15,77 @@ let Gallery = ({ onHate, beerPic, onLove }) => {
         setCount(count+1);
         onHate(_picId)
     };
+    
+    const HateButton = () => (
+    <div class="hateButtonBox cell">
+        <div 
+            id="hateButton" 
+            class="hateButton cell"  
+            onClick={
+                ()=>handleHate(beerPic[count].id)
+            }            
+        > 
+            Hate 
+        </div>
+    </div>
+    );
 
+    const Picture = () => (
+        <div class="pictureAreaBox cell"> 
+            <div 
+                id='beerPic'
+                class="pictureArea cell"
+            > 
+                {beerPic[count].id} :
+                {beerPic[count].status} 
+            </div>
+        </div>
+    );
+
+    const LoveButton = () => (
+        <div class="loveButtonBox cell">
+            <div 
+                id="loveButton" 
+                class="loveButton cell"
+                onClick={
+                    ()=>handleLove(beerPic[count].id)
+                }
+            > 
+                Love 
+            </div>
+        </div>
+    );
+
+    const StatusBar = () => (
+        <div 
+            id='beerPicLog'
+            class="statusBar cell"
+        >
+            {idScope.map(e =>  e===count ? '+ ' : '- ')}
+        </div>    
+    );
+
+    const SelectionLink = () => (
+        <Link to="/beender/choice" >
+            Goto Choice
+        </Link>
+    );
+
+    const GalleryProcess = () => (
+        <div class="GalleryBox">
+            <HateButton/>
+            <Picture/>
+            <LoveButton/>
+            <StatusBar/>
+        </div>
+    );
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          You are in the Gallery
-        </p>
-        <div id='gallery'>
+        <div id='gallery' >
             { count >= beerPic.length  
-                ? (
-                    <div>
-                        <Link 
-                            to="/beender/choice"
-                        >
-                            Goto Choice
-                        </Link>
-                    </div>
-                  ) 
-                : (
-                    <div>
-                        <button 
-                            id="hateButton" 
-          onClick={()=>handleHate(beerPic[count].id)}            
-                        > Hate </button>
-                        <span id='beerPic'> {beerPic[count].id} : {beerPic[count].status} </span>
-                        <button id="loveButton" 
-                            onClick={()=>handleLove(beerPic[count].id)}
-                        > Love </button>
-                        <div id='beerPicLog'>{idScope.map(e =>  e===count ? '+ ' : '- ')}</div>
-                    </div>
-                  )
+                ? <SelectionLink/>
+                : <GalleryProcess/>  
             }       
         </div>
-      </header>
-    </div>
   );
 };
 
