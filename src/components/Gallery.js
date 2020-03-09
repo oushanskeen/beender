@@ -66,9 +66,15 @@ let Gallery = ({ onHate, beerPic, onLove }) => {
     );
 
     const SelectionLink = () => (
-        <Link to="/beender/choice" >
-            Goto Choice
-        </Link>
+        <div class="GalleryBox">
+            
+                <Link to="/beender/choice" class="selectionLink cell">
+            
+                    Goto Choice
+         
+                </Link>
+           
+        </div>
     );
 
     const GalleryProcess = () => (
@@ -80,7 +86,7 @@ let Gallery = ({ onHate, beerPic, onLove }) => {
         </div>
     );
   return (
-        <div id='gallery' >
+        <div id='gallery'>
             { count >= beerPic.length  
                 ? <SelectionLink/>
                 : <GalleryProcess/>  
