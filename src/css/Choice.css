@@ -1,0 +1,75 @@
+.ChoiceBox {
+    display:grid;
+    grid-template-columns: repeat(5,20%);
+    grid-template-rows: repeat(5,20%);
+    position: relative;
+    height: 925px;
+    background: #FDEEEE;
+    border: 5px solid black;
+    text-decoration: none;
+    height:99vh;
+    width:98vw;
+}
+a{
+    color: Black;
+}
+.cell{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: calc(14px + 2vmin);
+    font-weight:bold;
+}
+
+.heartSignBox{
+    display:flex;
+    grid-area:1/3/2/4;
+    justify-content:center;
+    align-items:center;
+}
+.selectionAreaBox{
+    display:flex;
+    flex-wrap:wrap;
+    grid-area:2/2/5/5;
+    justify-content:center;
+    align-content:center;
+    align-items:center;
+    padding:2%;
+}
+.picArea{
+    display:flex;
+    flex-wrap:wrap;
+    grid-area:2/2/5/5;
+    /*justify-content:center;
+    align-content:center;
+    align-items:center;*/
+    justify-content:start;
+    /*justify-content:space-between;*/
+    align-content:flex-start;
+    /*align-items:flex-start;*/
+    width:100%;
+    height:100%;
+    /*padding:30px;*/
+}
+.picItem{
+   background: #E3E0E0;
+   opacity: 0.7;
+   border: 5px solid black;
+   width:19%;
+   height: 35%; 
+   margin:2%; 
+   text-decoration: none;   
+}
+.picItem:hover {
+    background-color: #3399CC;
+}
+.picItem:active{
+     font-size:40px;
+}
+.descriptionAreaBox{
+    display:flex;
+    grid-area:5/2/6/5;
+    justify-content:center;
+    align-items:center;
+}
