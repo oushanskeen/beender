@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.css": "/beender/static/css/main.3cd0acdc.chunk.css",
-    "main.js": "/beender/static/js/main.333d18a0.chunk.js",
-    "main.js.map": "/beender/static/js/main.333d18a0.chunk.js.map",
+    "main.css": "/beender/static/css/main.9b30786c.chunk.css",
+    "main.js": "/beender/static/js/main.838436df.chunk.js",
+    "main.js.map": "/beender/static/js/main.838436df.chunk.js.map",
     "runtime-main.js": "/beender/static/js/runtime-main.f73d8187.js",
     "runtime-main.js.map": "/beender/static/js/runtime-main.f73d8187.js.map",
-    "static/js/2.026a7631.chunk.js": "/beender/static/js/2.026a7631.chunk.js",
-    "static/js/2.026a7631.chunk.js.map": "/beender/static/js/2.026a7631.chunk.js.map",
+    "static/js/2.9fd6343d.chunk.js": "/beender/static/js/2.9fd6343d.chunk.js",
+    "static/js/2.9fd6343d.chunk.js.map": "/beender/static/js/2.9fd6343d.chunk.js.map",
     "static/js/3.1831fc4b.chunk.js": "/beender/static/js/3.1831fc4b.chunk.js",
     "static/js/3.1831fc4b.chunk.js.map": "/beender/static/js/3.1831fc4b.chunk.js.map",
     "static/js/4.72557546.chunk.js": "/beender/static/js/4.72557546.chunk.js",
@@ -22,10 +22,10 @@
     "static/js/9.c3c7e8f1.chunk.js": "/beender/static/js/9.c3c7e8f1.chunk.js",
     "static/js/9.c3c7e8f1.chunk.js.map": "/beender/static/js/9.c3c7e8f1.chunk.js.map",
     "index.html": "/beender/index.html",
-    "precache-manifest.d49eb889168b0a706f294943e44a1721.js": "/beender/precache-manifest.d49eb889168b0a706f294943e44a1721.js",
+    "precache-manifest.8c5533ae79dc0376b1cd7a87d2006d97.js": "/beender/precache-manifest.8c5533ae79dc0376b1cd7a87d2006d97.js",
     "service-worker.js": "/beender/service-worker.js",
-    "static/css/main.3cd0acdc.chunk.css.map": "/beender/static/css/main.3cd0acdc.chunk.css.map",
-    "static/js/2.026a7631.chunk.js.LICENSE": "/beender/static/js/2.026a7631.chunk.js.LICENSE",
+    "static/css/main.9b30786c.chunk.css.map": "/beender/static/css/main.9b30786c.chunk.css.map",
+    "static/js/2.9fd6343d.chunk.js.LICENSE": "/beender/static/js/2.9fd6343d.chunk.js.LICENSE",
     "static/media/1.jpg": "/beender/static/media/1.93d42d17.jpg",
     "static/media/2.jpg": "/beender/static/media/2.8a2ba083.jpg",
     "static/media/3.jpg": "/beender/static/media/3.6d02c8c5.jpg",
@@ -36,8 +36,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.f73d8187.js",
-    "static/js/2.026a7631.chunk.js",
-    "static/css/main.3cd0acdc.chunk.css",
-    "static/js/main.333d18a0.chunk.js"
+    "static/js/2.9fd6343d.chunk.js",
+    "static/css/main.9b30786c.chunk.css",
+    "static/js/main.838436df.chunk.js"
   ]
 }
