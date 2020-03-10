@@ -12,6 +12,11 @@
 a{
     color: Black;
 }
+/*
+img{
+    width:100%
+}
+*/
 .cell{
     display:flex;
     justify-content:center;

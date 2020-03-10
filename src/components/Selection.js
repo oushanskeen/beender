@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import '../css/Selection.css';
 import { connect } from "react-redux";
 import * as actions from '../actions';
@@ -8,16 +8,33 @@ let Selection = ({ selection, info=[{id:"1",status:'unknown'}], onNo, onYes}) =>
   let {beerId} = useParams();
   let essence = info.filter(e => e.id === beerId[1]);
 
+  let [pic,setPic] = useState('');
+  const handlePicImport = _pica => {
+      import(`../images/beerPics/${_pica}.jpg`).then(res=>{
+           setPic(res.default);
+      });
+  };
+  handlePicImport(beerId[1]);
+
 return (
-    <div id="selection" class="SelectionBox">
+    <div id="selection" className="SelectionBox">
         <div class="contentAreaBox">
-            <div id="selectedCard" class="choicePicArea cell">
-                id: {essence[0].id}, 
-                status: {essence[0].status}
+            <div 
+                id="selectedCard" 
+                class="choicePicArea cell"
+            >
+           
+            <img src={pic}/>
+
             </div>
             <div class="descrAreaBox">
-                <div class="descrTextArea cell">
-                    some text   
+                <div class="descrTextArea">
+                    some text some text
+                    some text some text
+                    some text some text 
+                    some text some text
+                    some text some text
+                    some text some text 
                 </div>
                 <div class="descrButtonArea">
                     <Link 

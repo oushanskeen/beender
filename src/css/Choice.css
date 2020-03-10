@@ -57,8 +57,8 @@ a{
    opacity: 0.7;
    border: 5px solid black;
    /*calc(14px + 2vmin);*/
-   width:calc(14px + 20vmin);;
-   height: calc(14px + 20vmin)/*35%*/; 
+   width:calc(14px + 20vmin);
+   height: calc(14px + 20vmin); 
    margin:2%; 
    text-decoration: none;   
 }
