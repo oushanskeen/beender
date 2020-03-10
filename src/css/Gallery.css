@@ -50,11 +50,29 @@ a{
     align-items:center;
 }
 .pictureArea{
-    background: #E3E0E0;
+    /*background: #E3E0E0;*/
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-around;
+    align-items:center;
+    background: White;
     opacity: 0.7;
     width:98%;
     height:100%;
     border: 5px solid black;
+}
+img{
+    display:flex;
+    height:100%;
+    margin:50px;
+    justify-content:center;
+    align-items:center;
+}
+.pictureAreaText{
+    margin: 20px;
+    overflow-y: scroll;
+    height:30%;
+    font-size:3vmin;
 }
 .loveButtonBox{
     display:flex;

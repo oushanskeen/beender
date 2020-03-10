@@ -6,13 +6,76 @@ import {
 
 const sampleGalleryState = 
     [
-      {id:"1",status:'unknown'},
-      {id:"2",status:'unknown'},
-      {id:"3",status:'unknown'},
-      {id:"4",status:'unknown'},
-      {id:"5",status:'unknown'},
-      {id:"6",status:'unknown'},
-      {id:"7",status:'unknown'},
+      {
+        id:"1",
+        status:'unknown',
+        eval:
+        {
+            "welcome": "grapes",
+            "post-effect": "tears",
+            "song": "Billy Eilish - When the party is over"
+        }
+      },
+      {
+        id:"2",
+        status:'unknown',
+        eval:
+        {
+            "welcome": "Jam",
+            "post-effect": "Royal Dreams",
+            "song": "Marina and the diamonds - Blue"
+        }
+      },
+      {
+        id:"3",
+        status:'unknown',
+        eval:
+        {
+            "welcome": "mosaic",
+            "post-effect": "bit separated",
+            "song": "Glass Heroes - You let me down"
+        }
+      },
+      {
+        id:"4",
+        status:'unknown',
+        eval:
+        {
+            "welcome": "farm flows",
+            "post-effect": "grass & mold",
+            "song": "Keep Off the grass - Your Neighbour"
+        } 
+      },
+      {
+        id:"5",
+        status:'unknown',
+        eval:
+        {
+            "welcome": "squirrel fairytales",
+            "post-effect": "squirrel dreams",
+            "song": "Alvin & The Chip Monks - Squeakuel" 
+        }
+      },
+      {
+        id:"6",
+        status:'unknown',
+        eval:
+        {
+            "welcome": "heavy sweat",
+            "post-effect": "sinking in a deep",
+            "song": "Sade - By your side"
+        }
+      },
+      {
+        id:"7",
+        status:'unknown',
+        eval:
+        {
+            "welcome": "questions",
+            "post-effect": "more questions",
+            "song": "Anya Marina - Whatever You Like" 
+        }
+      },
     ];
 
 const initialState = (window.Cypress && window.initialState) || 

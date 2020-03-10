@@ -15,6 +15,7 @@ let Gallery = ({ onHate, beerPic, onLove }) => {
         setCount(count+1);
         onHate(_picId)
     };
+
     
     const HateButton = () => (
     <div class="hateButtonBox cell">
@@ -30,14 +31,33 @@ let Gallery = ({ onHate, beerPic, onLove }) => {
     </div>
     );
 
+    let [pic,setPic] = useState('');
+    const handlePicImport = _pica => {
+        import(`../images/beerPics/${_pica}.jpg`).then(res=>{
+            setPic(res.default);
+        });
+    };
+    //handlePicImport(beerId[1]);
+    //{beerPic[count].id} :
+    //{beerPic[count].status} 
     const Picture = () => (
-        <div class="pictureAreaBox cell"> 
+        <div class="pictureAreaBox"> 
             <div 
                 id='beerPic'
                 class="pictureArea cell"
             > 
-                {beerPic[count].id} :
-                {beerPic[count].status} 
+            {handlePicImport(count+1)}
+                <img src={pic}/> 
+                <div class="pictureAreaText">
+                    WELCOME: 
+                        {beerPic[count].eval["welcome"]}<br/>
+                         <br/>
+                    POST-EFFECT: 
+                        {beerPic[count].eval["post-effect"]}<br/>
+                         <br/>
+                    SONG: 
+                        {beerPic[count].eval["song"]}<br/>          
+                </div>
             </div>
         </div>
     );
