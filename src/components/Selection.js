@@ -4,7 +4,8 @@ import { connect } from "react-redux";
 import * as actions from '../actions';
 import { Link, useParams } from 'react-router-dom';
 
-let Selection = ({ selection, info=[{id:"1",status:'unknown'}], onNo, onYes}) => {
+let Selection = ({ selection, info, onNo, onYes}) => {
+  console.log("info: ", info[0].description);
   let {beerId} = useParams();
   let essence = info.filter(e => e.id === beerId[1]);
 
@@ -29,12 +30,7 @@ return (
             </div>
             <div class="descrAreaBox">
                 <div class="descrTextArea">
-                    some text some text
-                    some text some text
-                    some text some text 
-                    some text some text
-                    some text some text
-                    some text some text 
+                    {info[beerId[1]].description}
                 </div>
                 <div class="descrButtonArea">
                     <Link 
