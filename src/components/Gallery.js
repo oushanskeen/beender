@@ -16,21 +16,6 @@ let Gallery = ({ onHate, beerPic, onLove }) => {
         onHate(_picId)
     };
 
-    
-    const HateButton = () => (
-    <div class="hateButtonBox cell">
-        <div 
-            id="hateButton" 
-            class="hateButton cell"  
-            onClick={
-                ()=>handleHate(beerPic[count].id)
-            }            
-        > 
-            Hate 
-        </div>
-    </div>
-    );
-
     let [pic,setPic] = useState('');
     const handlePicImport = _pica => {
         import(`../images/beerPics/${_pica}.jpg`).then(res=>{
@@ -39,50 +24,81 @@ let Gallery = ({ onHate, beerPic, onLove }) => {
     };
     //handlePicImport(beerId[1]);
     //{beerPic[count].id} :
-    //{beerPic[count].status} 
+    //{beerPic[count].status}
+
+    const Welcome = () => (
+        <div class="row galWelcRow">
+            <div class="col">
+                <div class="gslWelcBox ocell">
+                    SELECT THE BEER!
+                </div>
+            </div>
+        </div>
+    );
+ 
     const Picture = () => (
-        <div class="pictureAreaBox"> 
-            <div 
-                id='beerPic'
-                class="pictureArea cell"
-            > 
-            {handlePicImport(count+1)}
-                <img src={pic}/> 
-                <div class="pictureAreaText">
-                    WELCOME: 
-                        {beerPic[count].eval["welcome"]}<br/>
-                         <br/>
-                    POST-EFFECT: 
-                        {beerPic[count].eval["post-effect"]}<br/>
-                         <br/>
-                    SONG: 
-                        {beerPic[count].eval["song"]}<br/>          
+        <div class="row galPicaRow"> 
+            <div class="col">
+                <div 
+                    id='beerPic'
+                    class="galPicaBox cell"
+                > 
+                    {handlePicImport(count+1)}
+                    <img 
+                        src={pic} 
+                        alt="beerPic"
+                        class="galImg"
+                    />
                 </div>
             </div>
         </div>
     );
 
+    const HateButton = () => (
+        <div 
+            id="hateButton" 
+            class="galHome bttn cell"  
+            onClick={
+                ()=>handleHate(beerPic[count].id)
+            }            
+        > 
+            Hate 
+        </div>
+           
+    );
     const LoveButton = () => (
-        <div class="loveButtonBox cell">
-            <div 
-                id="loveButton" 
-                class="loveButton cell"
-                onClick={
-                    ()=>handleLove(beerPic[count].id)
-                }
-            > 
-                Love 
+        <div 
+            id="loveButton" 
+            class="galHome bttn cell"
+            onClick={
+                ()=>handleLove(beerPic[count].id)
+            }
+        > 
+            Love 
+        </div>
+    );
+    const Buttons = () => (
+        <div class="row galButtonsRow">
+            <div class="col">
+                <div class="galButtonsBox">
+                    <HateButton/>
+                    <LoveButton/>
+                </div>
             </div>
         </div>
     );
 
     const StatusBar = () => (
-        <div 
-            id='beerPicLog'
-            class="statusBar cell"
-        >
-            {idScope.map(e =>  e===count ? '+ ' : '- ')}
-        </div>    
+        <div class="row galCountRow">
+            <div class="col">
+                <div 
+                    id='beerPicLog'
+                    class="galCountBox ocell"
+                >
+                    {idScope.map(e =>  e===count ? '+ ' : '- ')}
+                </div>
+            </div>
+        </div>            
     );
 
     const SelectionLink = () => (
@@ -98,11 +114,11 @@ let Gallery = ({ onHate, beerPic, onLove }) => {
     );
 
     const GalleryProcess = () => (
-        <div class="GalleryBox">
-            <HateButton/>
+        <div class="main">
+            <Welcome/>
             <Picture/>
-            <LoveButton/>
             <StatusBar/>
+            <Buttons/>
         </div>
     );
   return (
