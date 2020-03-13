@@ -25,6 +25,7 @@
     .galImg{
         max-width: 100%;
         /*max-height: 100%;*/
+        height:auto;
     }
     .galCountRow{
         height:10vh;
