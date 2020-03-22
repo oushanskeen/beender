@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/Choice.css';
+//import '../css/Choice.css';
 import { connect } from "react-redux";
 import * as actions from '../actions';
 import { Link } from 'react-router-dom';

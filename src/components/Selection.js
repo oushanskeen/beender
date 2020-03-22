@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import '../css/Selection.css';
+//import '../css/Selection.css';
 import { connect } from "react-redux";
 import * as actions from '../actions';
 import { Link, useParams } from 'react-router-dom';
