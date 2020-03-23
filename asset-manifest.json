@@ -1,31 +1,15 @@
 {
   "files": {
-    "main.css": "/beender/static/css/main.c17c2fc3.chunk.css",
-    "main.js": "/beender/static/js/main.dbe392d8.chunk.js",
-    "main.js.map": "/beender/static/js/main.dbe392d8.chunk.js.map",
-    "runtime-main.js": "/beender/static/js/runtime-main.1c3bb52c.js",
-    "runtime-main.js.map": "/beender/static/js/runtime-main.1c3bb52c.js.map",
-    "static/js/2.369754e1.chunk.js": "/beender/static/js/2.369754e1.chunk.js",
-    "static/js/2.369754e1.chunk.js.map": "/beender/static/js/2.369754e1.chunk.js.map",
-    "static/js/3.0b665629.chunk.js": "/beender/static/js/3.0b665629.chunk.js",
-    "static/js/3.0b665629.chunk.js.map": "/beender/static/js/3.0b665629.chunk.js.map",
-    "static/js/4.e31a2b23.chunk.js": "/beender/static/js/4.e31a2b23.chunk.js",
-    "static/js/4.e31a2b23.chunk.js.map": "/beender/static/js/4.e31a2b23.chunk.js.map",
-    "static/js/5.79f66d93.chunk.js": "/beender/static/js/5.79f66d93.chunk.js",
-    "static/js/5.79f66d93.chunk.js.map": "/beender/static/js/5.79f66d93.chunk.js.map",
-    "static/js/6.67141754.chunk.js": "/beender/static/js/6.67141754.chunk.js",
-    "static/js/6.67141754.chunk.js.map": "/beender/static/js/6.67141754.chunk.js.map",
-    "static/js/7.707a666e.chunk.js": "/beender/static/js/7.707a666e.chunk.js",
-    "static/js/7.707a666e.chunk.js.map": "/beender/static/js/7.707a666e.chunk.js.map",
-    "static/js/8.e5df153d.chunk.js": "/beender/static/js/8.e5df153d.chunk.js",
-    "static/js/8.e5df153d.chunk.js.map": "/beender/static/js/8.e5df153d.chunk.js.map",
-    "static/js/9.22051daa.chunk.js": "/beender/static/js/9.22051daa.chunk.js",
-    "static/js/9.22051daa.chunk.js.map": "/beender/static/js/9.22051daa.chunk.js.map",
+    "main.js": "/beender/static/js/main.c4301ab7.chunk.js",
+    "main.js.map": "/beender/static/js/main.c4301ab7.chunk.js.map",
+    "runtime-main.js": "/beender/static/js/runtime-main.cfa0c103.js",
+    "runtime-main.js.map": "/beender/static/js/runtime-main.cfa0c103.js.map",
+    "static/js/2.f5306337.chunk.js": "/beender/static/js/2.f5306337.chunk.js",
+    "static/js/2.f5306337.chunk.js.map": "/beender/static/js/2.f5306337.chunk.js.map",
     "index.html": "/beender/index.html",
-    "precache-manifest.35050e81940ff4efa0a6fe65e48a6b24.js": "/beender/precache-manifest.35050e81940ff4efa0a6fe65e48a6b24.js",
+    "precache-manifest.99626df7c8b9c1ff7785a29d8ecad3a1.js": "/beender/precache-manifest.99626df7c8b9c1ff7785a29d8ecad3a1.js",
     "service-worker.js": "/beender/service-worker.js",
-    "static/css/main.c17c2fc3.chunk.css.map": "/beender/static/css/main.c17c2fc3.chunk.css.map",
-    "static/js/2.369754e1.chunk.js.LICENSE": "/beender/static/js/2.369754e1.chunk.js.LICENSE",
+    "static/js/2.f5306337.chunk.js.LICENSE.txt": "/beender/static/js/2.f5306337.chunk.js.LICENSE.txt",
     "static/media/1.jpg": "/beender/static/media/1.93d42d17.jpg",
     "static/media/2.jpg": "/beender/static/media/2.8a2ba083.jpg",
     "static/media/3.jpg": "/beender/static/media/3.6d02c8c5.jpg",
@@ -35,9 +19,8 @@
     "static/media/7.jpg": "/beender/static/media/7.441c9fb3.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.1c3bb52c.js",
-    "static/js/2.369754e1.chunk.js",
-    "static/css/main.c17c2fc3.chunk.css",
-    "static/js/main.dbe392d8.chunk.js"
+    "static/js/runtime-main.cfa0c103.js",
+    "static/js/2.f5306337.chunk.js",
+    "static/js/main.c4301ab7.chunk.js"
   ]
 }

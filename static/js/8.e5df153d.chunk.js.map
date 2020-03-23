@@ -1,1 +1,0 @@
-{"version":3,"sources":["images/beerPics/6.jpg"],"names":["module","exports"],"mappings":"sFAAAA,EAAOC,QAAU,IAA0B","file":"static/js/8.e5df153d.chunk.js","sourcesContent":["module.exports = __webpack_public_path__ + \"static/media/6.8725cd9a.jpg\";"],"sourceRoot":""}
