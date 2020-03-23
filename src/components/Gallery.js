@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
-//import '../css/Gallery.css';
 import * as actions from '../actions';
 import { connect } from "react-redux";
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+import {GlobalStyle,Container,Grid,AreaBox,ParamBox,TextBox,Text,Button,Img,link,naked} from '../css/style.js';
 
 let Gallery = ({ onHate, beerPic, onLove }) => {
    let idScope = beerPic.map((e,i) => i);
@@ -15,120 +16,107 @@ let Gallery = ({ onHate, beerPic, onLove }) => {
         setCount(count+1);
         onHate(_picId)
     };
-
     let [pic,setPic] = useState('');
     const handlePicImport = _pica => {
         import(`../images/beerPics/${_pica}.jpg`).then(res=>{
             setPic(res.default);
         });
     };
-    //handlePicImport(beerId[1]);
-    //{beerPic[count].id} :
-    //{beerPic[count].status}
 
+    {/*<!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->*/}
     const Welcome = () => (
-        <div class="row galWelcRow">
-            <div class="col">
-                <div class="gslWelcBox ocell">
-                    SELECT THE BEER!
-                </div>
-            </div>
-        </div>
+        <AreaBox g={[2,2,3,5]}>
+            <Text>
+                SELECT THE BEER!     
+            </Text>
+        </AreaBox>
     );
- 
-    const Picture = () => (
-        <div class="row galPicaRow"> 
-            <div class="col">
-                <div 
-                    id='beerPic'
-                    class="galPicaBox cell"
-                > 
-                    {handlePicImport(count+1)}
-                    <img 
-                        src={pic} 
-                        alt="beerPic"
-                        class="galImg"
-                    />
-                </div>
-            </div>
-        </div>
+    const Beerpic = () => (
+        <AreaBox g={[3,2,7,5]}  style={naked}>
+            {handlePicImport(count+1)}
+            <Img src={require(`../images/beerPics/${count+1}.jpg`)}/>
+        </AreaBox>
     );
-
+    const Beergame = () => (
+        <AreaBox g={[7,2,9,5]} style={naked}>
+            <ParamBox w={"100%"} h={"66.66%"}>
+                <TextBox>
+                    welcome : {beerPic[count].eval["welcome"]} <br/>
+                    post-effect : {beerPic[count].eval["post-effect"]} <br/>
+                    song : {beerPic[count].eval["song"]} <br/>
+                </TextBox>
+            </ParamBox>
+            <ParamBox w={"100%"} h={"33.33%"}> 
+                {idScope.map(e =>  e===count ? '+ ' : '- ')} 
+            </ParamBox>
+        </AreaBox>
+    );
     const HateButton = () => (
-        <div 
-            id="hateButton" 
-            class="galHome bttn cell"  
-            onClick={
-                ()=>handleHate(beerPic[count].id)
-            }            
-        > 
-            Hate 
-        </div>
+        <Button>
+            <div 
+                id="hateButton" 
+                class="galHome bttn cell"  
+                onClick={
+                    ()=>handleHate(beerPic[count].id)
+                }            
+            > 
+                Hate 
+            </div>
+        </Button>
            
     );
     const LoveButton = () => (
-        <div 
-            id="loveButton" 
-            class="galHome bttn cell"
-            onClick={
-                ()=>handleLove(beerPic[count].id)
-            }
-        > 
-            Love 
-        </div>
-    );
-    const Buttons = () => (
-        <div class="row galButtonsRow">
-            <div class="col">
-                <div class="galButtonsBox">
-                    <HateButton/>
-                    <LoveButton/>
-                </div>
+        <Button>
+            <div 
+                id="loveButton" 
+                class="galHome bttn cell"
+                onClick={
+                    ()=>handleLove(beerPic[count].id)
+                }
+            > 
+                Love 
             </div>
-        </div>
+        </Button>
     );
-
-    const StatusBar = () => (
-        <div class="row galCountRow">
-            <div class="col">
-                <div 
-                    id='beerPicLog'
-                    class="galCountBox ocell"
-                >
-                    {idScope.map(e =>  e===count ? '+ ' : '- ')}
-                </div>
-            </div>
-        </div>            
+    const ButtonsBox = () => (
+        <AreaBox g={[9,2,10,5]} fd="row" style={naked}>
+            <HateButton/>
+            <LoveButton/>
+        </AreaBox>
     );
 
     const SelectionLink = () => (
-        <div class="GalleryBox">
-            
-                <Link to="/beender/choice" class="selectionLink cell">
-            
-                    Goto Choice
-         
-                </Link>
-           
-        </div>
+        <Grid>
+        <AreaBox g={[2,2,10,5]}>
+            <ParamBox>
+                <Button>
+                    <Link to="/beender/choice" style={link}>
+                        GO TO SELECTION
+                    </Link>
+               </Button>
+            </ParamBox>
+        </AreaBox>
+        </Grid>
     );
-
     const GalleryProcess = () => (
-        <div class="main">
-            <Welcome/>
-            <Picture/>
-            <StatusBar/>
-            <Buttons/>
+            <Grid>
+                <Welcome/>
+                <Beerpic/>
+                <ButtonsBox/>
+                <Beergame/>
+            </Grid>
+    );
+    return (
+        <div id='gallery'>
+            <GlobalStyle/>
+            <Container>
+                    { count >= beerPic.length  
+                        ? <SelectionLink/>
+                        : <GalleryProcess/>  
+                    }
+            </Container>       
         </div>
     );
-  return (
-        <div id='gallery'>
-            { count >= beerPic.length  
-                ? <SelectionLink/>
-                : <GalleryProcess/>  
-            }       
-        </div>
-  );
 };
 
 const mapStateToProps = state => ({

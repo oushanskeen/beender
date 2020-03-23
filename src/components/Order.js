@@ -1,48 +1,57 @@
 import React from 'react';
-//import '../css/Order.css';
 import { connect } from "react-redux";
 import * as actions from '../actions';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
+import {GlobalStyle,Container,Grid,AreaBox,ParamBox,TextBox,Text,Button,Img,link,naked} from '../css/style.js';
 
-let Order = ({ gallery, outcome={isSelected:""}, onHome}) => {
-  let order = gallery.filter(e => e.id===outcome.isSelected);
-  return (
-        <div 
-            id="beerOrder"
-            class="OrderBox"
-        >
-            <div class="yourBeerCaptionBox cell">
-                YOUR BEER!
-            </div>
-            <div class="orderContentBox">
-                <div class="orderPicArea cell">
-                {
-                    order[0] === undefined 
-                    ? <p 
-                        
-                       >
-                           Pardon, you chose nothing
-                       </p>
-                    : <p>
-                        Your order:
-                        {order[0].id}
-                      </p>
-                }
-                </div>
-            </div>
-                <div class="orderButtonBox">
-                    <Link 
-                        to="/beender" 
-                        id="homeButton"
-                        class="orderHomeButton cell"
-                        onClick={onHome}        
-                    >
-                        HOME
-                    </Link>
-                </div>
-             
+let Order = ({ gallery, outcome, onHome}) => {
+    const order = () => gallery.filter(e => e.id===outcome.isSelected);
+    //console.log("order : ", order);
+
+    const Welcome = () => (
+        <AreaBox g={[2,2,3,5]}>
+            <Text>
+                ASK FOR THIS BEER     
+            </Text>
+        </AreaBox>
+    );
+    const BeerPic = () => (
+        <AreaBox g={[3,2,9,5]} style={naked}>
+            { (outcome == undefined) 
+                ? <Text>seems you chose nothing</Text>
+                : <Img src={require(`../images/beerPics/${order()[0].id}.jpg`)}/>
+            }
+        </AreaBox>
+    );
+    const HomeButton = () => (
+        <AreaBox g={[9,2,10,5]} fd="row" style={naked}>
+            <Button>
+                <Link 
+                    to="/beender" 
+                    id="homeButton"
+                    onClick={onHome} 
+                    style={link}       
+                >
+                    Home
+                </Link>
+            </Button>
+        </AreaBox>
+    );
+
+    return (
+        <div id="beerOrder">
+            <GlobalStyle/>
+            <Container>
+                <Grid>
+                    <Welcome/>
+                    <BeerPic/>
+                    <HomeButton/>
+                </Grid>
+            </Container>
         </div>
-  );
+    );
 };
 
 const mapStateToProps = state => ({

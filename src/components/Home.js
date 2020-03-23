@@ -1,35 +1,46 @@
 import React from 'react';
-//import '../css/Home.css';
 import { Link } from 'react-router-dom';
 import { connect } from "react-redux";
 import * as actions from '../actions';
+import styled from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
+import {GlobalStyle,Container,Grid,AreaBox,ParamBox,TextBox,Text,Button,Img,link,naked} from '../css/style.js';
+
+const Welcome = () => (
+    <AreaBox g={[2,2,6,5]} style={naked}>
+        <Text m={"16vmin"}>
+            This lil app aimed to help you
+            navigating in our fancy beer
+            forest.     
+        </Text>
+    </AreaBox>
+);
+
+const ButtonsBox = () => (
+    <AreaBox g={[6,2,10,5]} fd="row">
+        <Button>
+            <Link 
+                to="/beender/gallery"
+                style={link}
+            >
+                GO TO GALLERY
+            </Link>
+        </Button>
+    </AreaBox>
+);
 
 const Home = ({hello,store}) => {
     return (
-        <div class="main">
-            <div class="row homeWelcRow">
-                <div class="col">
-                    <div class="homeWelcBox ocell">
-                            This lil app aimed to help you
-                            navigating in our fancy beer
-                            forest.     
-                    </div>
-                </div>
-            </div>
-            <div class="row homeButtonsRow">
-                <div class="col">
-                    <div class="homeButtonsBox">
-                        <Link 
-                            to="/beender/gallery" 
-                            class="goGallery bttn cell"
-                        >
-                            Go To Gallery
-                        </Link>
-                    </div>
-                </div>
-            </div>
+        <div>
+            <GlobalStyle/>
+            <Container>
+                <Grid>
+                    <Welcome/>
+                    <ButtonsBox/>
+                </Grid>
+            </Container>
         </div>
-    );
+    )
 };
 
 
