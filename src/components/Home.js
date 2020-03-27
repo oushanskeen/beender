@@ -2,9 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from "react-redux";
 import * as actions from '../actions';
-import styled from 'styled-components';
-import { createGlobalStyle } from 'styled-components';
-import {GlobalStyle,Container,Grid,AreaBox,ParamBox,TextBox,Text,Button,Img,link,naked} from '../css/style.js';
+import {GlobalStyle,Container,Grid,AreaBox,Text,Button,link,naked} from '../css/style.js';
 
 const Welcome = () => (
     <AreaBox g={[2,2,6,5]} style={naked}>

@@ -1,9 +1,7 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { connect } from "react-redux";
 import * as actions from '../actions';
 import { Link, useParams } from 'react-router-dom';
-import styled from 'styled-components';
-import { createGlobalStyle } from 'styled-components';
 import {GlobalStyle,Container,Grid,AreaBox,ParamBox,TextBox,Text,Button,Img,link,naked} from '../css/style.js';
 
 let Selection = ({ selection, info, onNo, onYes}) => {

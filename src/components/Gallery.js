@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import * as actions from '../actions';
 import { connect } from "react-redux";
 import { Link } from 'react-router-dom';
-import styled from 'styled-components';
 import {GlobalStyle,Container,Grid,AreaBox,ParamBox,TextBox,Text,Button,Img,link,naked} from '../css/style.js';
 
 let Gallery = ({ onHate, beerPic, onLove }) => {
@@ -23,7 +22,6 @@ let Gallery = ({ onHate, beerPic, onLove }) => {
         });
     };
 
-    {/*<!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->*/}
     const Welcome = () => (
         <AreaBox g={[2,2,3,5]}>
             <Text>
@@ -34,7 +32,7 @@ let Gallery = ({ onHate, beerPic, onLove }) => {
     const Beerpic = () => (
         <AreaBox g={[3,2,7,5]}  style={naked}>
             {handlePicImport(count+1)}
-            <Img src={require(`../images/beerPics/${count+1}.jpg`)}/>
+            <Img id="beerPic" src={require(`../images/beerPics/${count+1}.jpg`)}/>
         </AreaBox>
     );
     const Beergame = () => (
@@ -46,7 +44,7 @@ let Gallery = ({ onHate, beerPic, onLove }) => {
                     song : {beerPic[count].eval["song"]} <br/>
                 </TextBox>
             </ParamBox>
-            <ParamBox w={"100%"} h={"33.33%"}> 
+            <ParamBox id="beerPicLog" w={"100%"} h={"33.33%"}> 
                 {idScope.map(e =>  e===count ? '+ ' : '- ')} 
             </ParamBox>
         </AreaBox>

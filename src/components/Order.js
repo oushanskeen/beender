@@ -2,9 +2,7 @@ import React from 'react';
 import { connect } from "react-redux";
 import * as actions from '../actions';
 import { Link } from 'react-router-dom';
-import styled from 'styled-components';
-import { createGlobalStyle } from 'styled-components';
-import {GlobalStyle,Container,Grid,AreaBox,ParamBox,TextBox,Text,Button,Img,link,naked} from '../css/style.js';
+import {GlobalStyle,Container,Grid,AreaBox, Text,Button,Img,link,naked} from '../css/style.js';
 
 let Order = ({ gallery, outcome, onHome}) => {
     const order = () => gallery.filter(e => e.id===outcome.isSelected);
@@ -18,8 +16,8 @@ let Order = ({ gallery, outcome, onHome}) => {
         </AreaBox>
     );
     const BeerPic = () => (
-        <AreaBox g={[3,2,9,5]} style={naked}>
-            { (outcome == undefined) 
+        <AreaBox g={[3,2,9,5]} style={naked} id="beerOrder">
+            { (outcome === undefined) 
                 ? <Text>seems you chose nothing</Text>
                 : <Img src={require(`../images/beerPics/${order()[0].id}.jpg`)}/>
             }

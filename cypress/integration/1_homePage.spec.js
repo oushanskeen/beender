@@ -7,13 +7,13 @@ context("The Home Page", ()=>{
         cy.visit('http://localhost:3000/beender');
       }); 
       it('contains some welcome text', () => {
-        cy.contains('Some welcome text about where you are');
+        cy.contains("This lil app aimed to help you navigating in our fancy beer forest.");
       });
       it('contains link to a gallery', () => {
-        cy.contains('Goto Gallery');
+        cy.contains('GO TO GALLERY');
       });
       it('successfully loads gallery page', () => {
-        cy.contains('Goto Gallery').click();
+        cy.contains('GO TO GALLERY').click();
         cy.url().should('include', '/gallery');
       });    
 });
